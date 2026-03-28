@@ -166,17 +166,6 @@ Phase 2 (Exploitation):
   Return allocation
 ```
 
-## Citation
-
-```bibtex
-@inproceedings{anonymous2026learning,
-  title={Learning to Compensate: Sample Complexity of Envy Elimination under Unknown Submodular Valuations},
-  author={Anonymous},
-  booktitle={Proceedings of the 43rd International Conference on Machine Learning},
-  year={2026}
-}
-```
-
 ## License
 
 This code is released under the MIT License. See `LICENSE` for details.
