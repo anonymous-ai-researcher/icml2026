@@ -1,0 +1,20 @@
+# Configuration for Experiment 2: Phase Transition
+# Figure 2 in the paper
+
+experiment:
+  name: "phase_transition"
+  description: "Phase transition between exact EF and approximate EF1"
+
+parameters:
+  n_agents: 4
+  n_items: 50
+  n_trials: 50
+  epsilon_values: [0.01, 0.05, 0.1, 0.2]
+  
+output:
+  save_dir: "../results"
+  figure_name: "fig2_phase_transition.pdf"
+  table_name: "tab_phase_transition.csv"
+
+random:
+  seed: 42

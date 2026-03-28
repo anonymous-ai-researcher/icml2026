@@ -1,0 +1,22 @@
+# Default configuration for Experiment 1: Sample Complexity vs Accuracy
+# Figure 1 in the paper
+
+experiment:
+  name: "sample_complexity"
+  description: "Sample complexity as a function of target accuracy epsilon"
+  
+parameters:
+  n_agents: 4
+  n_items: 20
+  epsilon_values: [0.01, 0.02, 0.05, 0.1, 0.15, 0.2, 0.3, 0.5]
+  delta: 0.05
+  n_trials: 100
+  valuation_class: "additive"
+  
+output:
+  save_dir: "../results"
+  figure_name: "fig1_sample_complexity.pdf"
+  table_name: "tab_sample_complexity.csv"
+  
+random:
+  seed: 42
