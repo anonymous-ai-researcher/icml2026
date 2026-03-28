@@ -16,6 +16,44 @@ We study the sample complexity of achieving envy-free allocations when agent val
 
 4. **Robustness of EF1**: We demonstrate that EF1's existential quantifier structure provides inherent robustness to estimation errors.
 
+## Main Results
+
+### Sample Complexity Bounds (Table 1)
+
+| Valuation Class | Upper Bound | Lower Bound | Gap |
+|-----------------|-------------|-------------|-----|
+| Unit-demand     | O(nm/ε²)    | Ω(nm/ε²)    | Tight |
+| Coverage        | O(nm log m/ε²) | Ω(nm log m/ε²) | Tight |
+| Additive        | O(nm/ε²)    | Ω(nm/ε²)    | Tight |
+| Submodular      | O(n²m/ε²)   | Ω(nm/ε²)    | O(n) |
+
+### Experimental Results
+
+#### Figure 1: Sample Complexity vs. Accuracy
+Sample complexity scales as O(1/ε²), matching theoretical predictions.
+
+![Sample Complexity](results/figures/fig1_sample_complexity.png)
+
+#### Figure 2: Phase Transition
+Sharp transition from Ω(m) for exact EF to poly(1/ε) for ε-EF1.
+
+![Phase Transition](results/figures/fig2_phase_transition.png)
+
+#### Figure 3: EF1 Robustness
+EF1 violations remain bounded even under 20% estimation noise, while exact EF fails immediately.
+
+![Robustness Analysis](results/figures/fig3_robustness.png)
+
+#### Figure 4: Valuation Class Comparison
+Empirical sample complexity closely matches theoretical bounds for all valuation classes.
+
+![Valuation Comparison](results/figures/fig4_valuation_comparison.png)
+
+#### Figure 5: Scalability Analysis
+Algorithm 1 scales linearly in m and quadratically in n, matching theoretical predictions.
+
+![Scalability](results/figures/fig5_scalability.png)
+
 ## Repository Structure
 
 ```
@@ -32,8 +70,7 @@ eeag-learning/
 │   │   ├── greedy_ef1.py    # Greedy EF1 allocation
 │   │   └── estimation.py    # Value estimation with samples
 │   ├── fairness/            # Fairness metrics
-│   │   ├── envy.py          # Envy computation
-│   │   └── ef1.py           # EF1 verification
+│   │   └── envy.py          # Envy computation
 │   └── utils/               # Utilities
 │       └── sampling.py      # Noisy sampling oracle
 ├── experiments/             # Experiment scripts
@@ -129,25 +166,6 @@ Experiment parameters can also be specified via YAML config files:
 python experiments/exp1_sample_complexity.py --config experiments/configs/exp1_default.yaml
 ```
 
-## Main Results
-
-### Sample Complexity Bounds (Table 1)
-
-| Valuation Class | Upper Bound | Lower Bound | Gap |
-|-----------------|-------------|-------------|-----|
-| Unit-demand     | O(nm/ε²)    | Ω(nm/ε²)    | Tight |
-| Coverage        | O(nm log m/ε²) | Ω(nm log m/ε²) | Tight |
-| Additive        | O(nm/ε²)    | Ω(nm/ε²)    | Tight |
-| Submodular      | O(n²m/ε²)   | Ω(nm/ε²)    | O(n) |
-
-### Key Experimental Findings
-
-1. **Phase Transition**: Sharp transition from Ω(m) for exact EF to poly(1/ε) for ε-EF1.
-
-2. **Robustness**: EF1 violations remain bounded even under 20% estimation noise, while exact EF fails immediately.
-
-3. **Scalability**: Algorithm 1 scales linearly in m and quadratically in n, matching theoretical predictions.
-
 ## Algorithm Overview
 
 ### Algorithm 1: Explore-then-Exploit for ε-EF1
@@ -164,6 +182,17 @@ Phase 1 (Exploration):
 Phase 2 (Exploitation):
   Run greedy EF1 using estimated values v̂
   Return allocation
+```
+
+## Citation
+
+```bibtex
+@inproceedings{anonymous2026learning,
+  title={Learning to Compensate: Sample Complexity of Envy Elimination under Unknown Submodular Valuations},
+  author={Anonymous},
+  booktitle={Proceedings of the 43rd International Conference on Machine Learning},
+  year={2026}
+}
 ```
 
 ## License
