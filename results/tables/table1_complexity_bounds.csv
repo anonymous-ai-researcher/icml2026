@@ -1,0 +1,5 @@
+valuation_class,Empirical Mean,Empirical Std,Theoretical,Success Rate,Ratio
+additive,66417.0,28314.32,103134.96,1.0,0.644
+coverage,66417.0,28314.32,282942.58,1.0,0.235
+submodular,66417.0,28314.32,309404.88,1.0,0.215
+unit_demand,66417.0,28314.32,103134.96,1.0,0.644
