@@ -37,7 +37,7 @@ Sample complexity scales as O(1/ε²), matching theoretical predictions.
 #### Figure 2: Phase Transition
 Sharp transition from Ω(m) for exact EF to poly(1/ε) for ε-EF1.
 
-![Phase Transition](results/figures/fig2_phase_transition.png)
+<img src="results/figures/fig2_phase_transition.png" width="50%">
 
 #### Figure 3: EF1 Robustness
 EF1 violations remain bounded even under 20% estimation noise, while exact EF fails immediately.
